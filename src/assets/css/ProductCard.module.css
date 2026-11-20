@@ -1,0 +1,242 @@
+
+/* =========================
+   SECTION
+========================= */
+
+.section {
+  background-color: var(--bg-primary);
+  padding: 70px 0;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =========================
+   PRODUCT GRID
+========================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+.card {
+  display: block;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 10px 25px rgba(155, 123, 206, 0.2);
+}
+
+/* =========================
+   PRODUCT IMAGE
+========================= */
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background-color: var(--bg-secondary);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  transition: transform 0.5s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.08);
+}
+
+/* =========================
+   HOVER OVERLAY
+========================= */
+
+.hoverOverlay {
+  position: absolute;
+  inset: 0;
+
+  background-color: rgba(17, 17, 17, 0.6);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .hoverOverlay {
+  opacity: 1;
+}
+
+/* =========================
+   DETAILS BUTTON
+========================= */
+
+.detailsBtn {
+  padding: 12px 26px;
+
+  background-color: var(--accent);
+  color: var(--metallic-white);
+
+  border: 1px solid var(--accent);
+  border-radius: 30px;
+
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  transform: translateY(12px);
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.card:hover .detailsBtn {
+  transform: translateY(0);
+}
+
+.detailsBtn:hover {
+  background-color: transparent;
+  color: var(--metallic-white);
+  border-color: var(--metallic-white);
+}
+
+/* =========================
+   PRODUCT INFORMATION
+========================= */
+
+.info {
+  padding: 16px;
+}
+
+.category {
+  color: var(--text-secondary);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.name {
+  color: var(--metallic-white);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 10px;
+}
+
+.price {
+  display: block;
+  color: var(--metallic-white);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+/* =========================
+   LARGE TABLET
+========================= */
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+  .section {
+    padding: 50px 0;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 520px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .grid {
+    gap: 12px;
+  }
+
+  .info {
+    padding: 12px;
+  }
+
+  .name {
+    font-size: 14px;
+  }
+
+  .price {
+    font-size: 15px;
+  }
+
+  .detailsBtn {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+
+/* =========================
+   TOUCH DEVICES
+========================= */
+
+@media (hover: none) {
+  .hoverOverlay {
+    opacity: 1;
+    background-color: transparent;
+
+    align-items: flex-end;
+    padding-bottom: 12px;
+  }
+
+  .detailsBtn {
+    transform: none;
+    padding: 8px 18px;
+    font-size: 12px;
+  }
+}
