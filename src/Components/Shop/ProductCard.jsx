@@ -1,4 +1,3 @@
-
 import { useNavigate } from "react-router-dom";
 import Products from "../../Data/Products.json";
 import styles from "../../assets/css/ProductCard.module.css";
@@ -31,6 +30,9 @@ const ProductCard = () => {
                 <div className={styles.info}>
                   <p className={styles.category}>
                     {list.productname}
+                  </p>
+                  <p>
+                   Category: {list.category}
                   </p>
 
                   <h3 className={styles.name}>

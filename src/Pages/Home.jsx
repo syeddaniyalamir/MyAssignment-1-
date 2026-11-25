@@ -6,6 +6,7 @@ import Testimonials from "../Components/Home/Testimonials";
 import WhyChooseUs from "../Components/Home/WhyChooseUs";
 import Newsletter from "../Components/Home/Newsletter";
 import { use, useEffect } from "react";
+import NewArrivals from "../Components/Home/NewArrivals";
 
 const Home = () => {
   useEffect(()=>{
@@ -15,6 +16,7 @@ const Home = () => {
     <div>
       <Navbar />
       <Hero />
+      <NewArrivals/>
       <Testimonials />
       <WhyChooseUs />
       <Newsletter />

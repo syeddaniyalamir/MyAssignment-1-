@@ -1,4 +1,3 @@
-
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import styles from "../assets/css/ShopDetails.module.css";
@@ -41,6 +40,9 @@ useEffect(()=>{
             <div className={styles.info}>
             <span className={styles.category}>
             {product.productname}
+              </span>
+            <span className={styles.category}>Category: 
+              {product.category}
               </span>
 
               <p className={styles.description}>
