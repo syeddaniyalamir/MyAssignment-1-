@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import NotFound from "../Components/404/NotFound"
 
 const ShopDetails = () => {
-  const [click, setClick] = useState(0);
+  const [click, setClick] = useState(1);
 
   const {id} = useParams();
 
@@ -54,10 +54,10 @@ useEffect(()=>{
               </h2>
               
               <div className={styles.quantity}>
-              <button onClick={()=>setClick(click - 1)}>-</button>
+              <button onClick={()=>setClick(click > 1 ? click - 1 : 1)}>-</button>
                 <span>{click}</span>
                 <button onClick={()=>setClick(click + 1)}>+</button>
-                <button onClick={()=>setClick(0)}>x</button>
+                <button onClick={()=>setClick(1)}>x</button>
                 </div>
 
               <button className={styles.cartBtn}>
